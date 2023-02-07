@@ -1,5 +1,5 @@
 import { HouseRounded, Menu as MenuIcon } from '@mui/icons-material'
-import { AppBar, Box, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import React, { useState } from 'react'
 
 const pages = ['My Vault', 'Coin Flip', 'Roulette', 'Black Jack', 'Craps']
@@ -18,7 +18,7 @@ function NavBar () {
   return <AppBar position='fixed'>
     <Container maxWidth='xl'>
       <Toolbar disableGutters>
-        <HouseRounded sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }} />
+        <HouseRounded sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
         <Typography
             variant="h6"
             noWrap
@@ -71,6 +71,45 @@ function NavBar () {
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
+          <HouseRounded sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'times',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            The House
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Button
+              key='wallet-connect'
+              variant='outlined'
+              color='secondary'
+            >
+              Wallet Connect
+            </Button>
           </Box>
       </Toolbar>
     </Container>
