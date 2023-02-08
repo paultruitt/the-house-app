@@ -22,6 +22,7 @@ function App () {
           <Route path="roulette" element={<Roulette />} />
           <Route path="black-jack" element={<BlackJack />} />
           <Route path="craps" element={<Craps />} />
+          <Route path="/*" element={<Home />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

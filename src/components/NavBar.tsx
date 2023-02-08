@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { HouseRounded, Menu as MenuIcon } from '@mui/icons-material'
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import pages from '../data/pages.json'
+import { Link } from 'react-router-dom';
 
 function NavBar () {
   const [navMenuEl, setNavMenuEl] = useState<null | HTMLElement>(null);
@@ -21,8 +22,8 @@ function NavBar () {
         <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -65,7 +66,7 @@ function NavBar () {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu} href={page.url}>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu} component={Link} to={page.url}>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
@@ -74,9 +75,9 @@ function NavBar () {
           <HouseRounded sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
-            noWrap
-            component="a"
-            href=""
+            noWrap 
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -95,8 +96,9 @@ function NavBar () {
               <Button
                 key={page.name}
                 onClick={handleCloseNavMenu}
+                component={Link}
+                to={page.url}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                href={page.url}
               >
                 {page.name}
               </Button>

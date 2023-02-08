@@ -1,22 +1,27 @@
 [
     {
         "name": "My Vault",
-        "url": "vault"
+        "url": "vault",
+        "release": 0
     },
     {
         "name": "Coin Flip",
-        "url": "coin-flip"
+        "url": "coin-flip",
+        "release": 1
     },
     {
         "name": "Roulette",
-        "url": "roulette"
+        "url": "roulette",
+        "release": 2
     },
     {
         "name": "Black Jack",
-        "url": "black-jack"
+        "url": "black-jack",
+        "release": 3
     },
     {
         "name": "Craps",
-        "url": "craps"
+        "url": "craps",
+        "release": 4
     }
 ]
