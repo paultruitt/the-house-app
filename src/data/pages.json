@@ -1,0 +1,22 @@
+[
+    {
+        "name": "My Vault",
+        "url": "vault"
+    },
+    {
+        "name": "Coin Flip",
+        "url": "coin-flip"
+    },
+    {
+        "name": "Roulette",
+        "url": "roulette"
+    },
+    {
+        "name": "Black Jack",
+        "url": "black-jack"
+    },
+    {
+        "name": "Craps",
+        "url": "craps"
+    }
+]

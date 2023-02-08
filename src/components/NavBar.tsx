@@ -1,8 +1,7 @@
+import React, { useState } from 'react'
 import { HouseRounded, Menu as MenuIcon } from '@mui/icons-material'
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
-import React, { useState } from 'react'
-
-const pages = ['My Vault', 'Coin Flip', 'Roulette', 'Black Jack', 'Craps']
+import pages from '../data/pages.json'
 
 function NavBar () {
   const [navMenuEl, setNavMenuEl] = useState<null | HTMLElement>(null);
@@ -66,8 +65,8 @@ function NavBar () {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu} href={page.url}>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -94,11 +93,12 @@ function NavBar () {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                href={page.url}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
