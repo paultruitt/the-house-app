@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { HouseRounded, Menu as MenuIcon } from '@mui/icons-material'
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import pages from '../data/pages.json'
+import settings from '../data/settings.json'
 import { Link } from 'react-router-dom';
 
 function NavBar () {
@@ -65,7 +66,7 @@ function NavBar () {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {pages.filter((page) => settings.releaseStage >= page.release).map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu} component={Link} to={page.url}>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
@@ -92,7 +93,7 @@ function NavBar () {
             The House
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.filter((page) => settings.releaseStage >= page.release).map((page) => (
               <Button
                 key={page.name}
                 onClick={handleCloseNavMenu}
